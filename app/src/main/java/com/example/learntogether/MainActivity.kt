@@ -3,14 +3,21 @@ package com.example.learntogether
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,9 +25,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,51 +39,103 @@ class MainActivity : ComponentActivity() {
                 color = colorResource(id = R.color.white),
                 modifier = Modifier.fillMaxSize()
             ) {
-                QuadrantScreen()
+                MainScreen()
             }
         }
     }
 }
 
 @Composable
-fun QuadrantScreen() {
-    Row {
-        Column {
-            QuarterElement(0xFFEADDFF.toInt(), 0.5f, 0.5f, R.string.text_composable_title, R.string.text_composable_content)
-            QuarterElement(0xFFB69DF8.toInt(), 0.5f,  1f, R.string.row_composable_title, R.string.row_composable_content)
+fun MainScreen() {
+    Box() {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            val image = painterResource(id = R.drawable.android_logo)
+            Image(
+                painter = image,
+                contentDescription = null,
+                Modifier
+                    .background(colorResource(id = R.color.dark_blue))
+                    .size(100.dp),
+            )
+            Text(
+                text = stringResource(id = R.string.user_name),
+                fontSize = 40.sp,
+                modifier = Modifier.padding(top = 16.dp, bottom = 4.dp)
+            )
+            Text(
+                text = stringResource(id = R.string.user_description),
+                color = Color.Green
+            )
         }
-        Column {
-            QuarterElement(0xFFD0BCFF.toInt(), 1f, 0.5f, R.string.image_composable_title, R.string.image_composable_content)
-            QuarterElement(0xFFF6EDFF.toInt(), 1f,  1f, R.string.column_composable_title, R.string.column_composable_content)
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Bottom,
+            modifier = Modifier
+                .padding(bottom = 100.dp)
+                .fillMaxSize()
+        ) {
+            Row(
+                modifier = Modifier.width(180.dp)
+            ) {
+                Surface(
+                    contentColor = Color.Green
+                ) {
+                    Icon(
+                        Icons.Default.Phone,
+                        null,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                Text(
+                    text = "xxx-xxxx-xxxx",
+                    modifier = Modifier.weight(9f)
+                    )
+            }
+            Row (
+                modifier = Modifier.width(180.dp)
+            ) {
+                Surface(
+                    contentColor = Color.Green
+                ) {
+                    Icon(
+                        Icons.Default.Share,
+                        null,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                Text(
+                    text = "https://vercelapp.com",
+                    modifier = Modifier.weight(9f)
+                    )
+            }
+            Row(
+                modifier = Modifier.width(180.dp)
+            ) {
+                Surface(
+                    contentColor = Color.Green
+                ) {
+                    Icon(
+                        Icons.Default.Email,
+                        null,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                Text(
+                    text = "hoge@example.com",
+                    modifier = Modifier.weight(9f)
+                )
+            }
         }
     }
 }
 
+@Preview(showBackground = true)
 @Composable
-fun QuarterElement(
-    color: Int,
-    maxWidth: Float,
-    maxHeight: Float,
-    titleId: Int,
-    contentId: Int
-) {
-    Surface(
-        color = Color(color),
-        modifier = Modifier
-            .fillMaxWidth(maxWidth)
-            .fillMaxHeight(maxHeight)
-    ) {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                text = stringResource(titleId),
-                modifier = Modifier.padding(bottom = 16.dp),
-                fontWeight = FontWeight.Bold
-            )
-            Text(text = stringResource(contentId))
-        }
-    }
+fun ComposeQuadrantAppPreview() {
+    MainScreen()
 }
