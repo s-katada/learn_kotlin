@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<!--    <color name="text_compose_quadrant">#0xFFEADDFF</color>-->
+<!--    <color name="image_compose_quadrant">#0xFFD0BCFF</color>-->
+<!--    <color name="row_compose_quadrant">#0xFFB69DF8</color>-->
+<!--    <color name="column_compose_quadrant">#0xFFF6EDFF</color>-->
 </resources>
