@@ -1,20 +1,7 @@
 <resources>
     <string name="app_name">Learn Together</string>
-    <string name="title">Jetpack Compose tutorial</string>
-    <string name="subtitle">Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.</string>
-    <string name="content">In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.</string>
-    <string name="completed_text">All tasks completed</string>
-    <string name="complimentary_text">Nice work!</string>
-    <string name="text_composable_title">Text composable</string>
-    <string name="image_composable_title">Image composable</string>
-    <string name="row_composable_title">Row composable</string>
-    <string name="column_composable_title">Column composable</string>
-    <string name="text_composable_content">Displays text and follows the recommended Material Design guidelines.</string>
-    <string name="image_composable_content">Creates a composable that lays out and draws a given Painter class object.</string>
-    <string name="row_composable_content">A layout composable that places its children in a horizontal sequence.</string>
-    <string name="column_composable_content">A layout composable that places its children in a vertical sequence.</string>
-    <string name="user_name">Shunya Katada</string>
-    <string name="user_description">Android Developer Extraordinaire</string>
-    <string name="shopping_cart_content_desc">Shopping cart</string>
-    <string name="roll">Roll</string>
+    <string name="lemon_tree">Tap the lemon tree to select a lemon</string>
+    <string name="lemon">Keep tapping the lemon to squeeze it</string>
+    <string name="glass_of_lemonade">Tap the lemonade to drink it</string>
+    <string name="empty_glass">Tap the empty glass to start again</string>
 </resources>
